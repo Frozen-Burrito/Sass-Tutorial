@@ -1,0 +1,19 @@
+//Variables - Custom properties
+$font: 'Montserrat';
+$light: 300;
+$bold: 700;
+
+$color: rgb(62, 189, 89);
+$btn-padding: 2em;
+
+$mobile-width: 800px;
+
+//Maps 
+$theme: (
+    "primary": rgb(119, 119, 119),
+    "accent": rgb(148, 60, 60),
+    "text": rgb(255, 255, 255),
+
+    "bg-light": rgb(255, 255, 255),
+    "bg-dark": rgb(0, 0, 0),
+);

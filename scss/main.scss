@@ -1,1 +1,81 @@
+//Partials (Include scss files in other scss files)
+@import './resets';
+@import './variables';
 
+//Functions (Like Js, used to compute values)
+@function theme-color($color)
+{
+    //Using maps (and returning value in a function)
+    @return map-get($theme, $color);
+}
+
+//Mixins ("Similar" to functions, used to define styles)
+@mixin flexCenter ($direction: row)
+{
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin Theme ($light: true) {
+    @if $light {
+        background-color: theme-color(bg-light);
+        color: theme-color(bg-dark);
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+body {
+    //Using variables
+    background-color: $color;
+    font-family: $font, sans-serif;
+
+    //Using functions
+    color: theme-color(text);
+}
+
+//Nesting selectors
+.main {
+    @include flexCenter(row);
+
+    //Operations in scss (can't mix types)
+    width: 80% + 10%;
+
+    margin: 0 auto;
+
+    .paragraph {
+        font-weight: $light;
+    }
+
+    //Interpolation
+    #{&}_paragraph1 {
+        color: theme-color(accent);
+        font-weight: $bold;
+
+        &:hover {
+            color: theme-color(primary);
+        }
+    }
+
+    //Extend classes
+    #{&}_paragraph2 {
+        @extend .main_paragraph1;
+        font-size: 2em;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        background-color: theme-color(primary);
+    }
+}
+
+.light {
+    //Changing the theme with a mixin
+    @include Theme(true);
+}

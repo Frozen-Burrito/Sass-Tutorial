@@ -1,1 +1,63 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3ebd59;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main .paragraph {
+  font-weight: 300;
+}
+
+.main .main_paragraph1, .main .main_paragraph2 {
+  color: #943c3c;
+  font-weight: 700;
+}
+
+.main .main_paragraph1:hover, .main .main_paragraph2:hover {
+  color: #777777;
+}
+
+.main .main_paragraph2 {
+  font-size: 2em;
+}
+
+@media (max-width: 800px) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #777777;
+  }
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+/*# sourceMappingURL=main.css.map */
